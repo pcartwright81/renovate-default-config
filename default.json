@@ -2,8 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    "group:allNonMajor",
-    ":automergeMinor"
+    "group:allNonMajor"
   ],
-  "schedule": ["before 2am on Sunday"]
+  "schedule": ["before 2am on Sunday"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
 }
